@@ -16,15 +16,15 @@ species = pd.DataFrame(data.groupby("Species").mean()).iloc[0::, 1::]
 species.reset_index(inplace=True)
 
 
-plt.scatter(data["SepalLengthCm"], data["PetalWidthCm"], label="Data Points")
+plt.scatter(data["SepalWidthCm"], data["PetalWidthCm"], label="Data Points")
 
 
 model = LinearRegression()
-x = data[["SepalLengthCm"]]
+x = data[["SepalWidthCm"]]
 y = data["PetalWidthCm"]
 model.fit(x, y)
 
-plt.plot(data['SepalLengthCm'], model.predict(x), color='green', label='Linear Regression')
+plt.plot(data['SepalWidthCm'], model.predict(x), color='green', label='Linear Regression')
 
 plt.show()
 
