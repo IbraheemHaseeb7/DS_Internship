@@ -14,4 +14,3 @@ dates["Day_Group"] = pd.cut(dates["Day"], [0,10,20,31], labels=["Start of month"
 grouped_data = dates[["Day_Group", "Transaction Amount"]].groupby("Day_Group", observed=False).sum().reset_index()
 plt.bar(x=grouped_data["Day_Group"], height=grouped_data["Transaction Amount"])
 plt.show()
-# print(grouped_data)
